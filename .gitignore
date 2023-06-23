@@ -42,3 +42,6 @@ yarn-error.log*
 
 # node version
 .node-version
+
+# .env
+.env.local
