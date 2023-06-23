@@ -14,6 +14,12 @@ export const trpc = createTRPCNext<AppRouter>({
   config() {
     return {
       transformer: superjson,
+      queryClientConfig: {
+        defaultOptions: {
+          // fetchに失敗した時のretryをfalse, ユーザーがwindowクリック時のfetch動作をfalse
+          queries: { retry: false, refetchOnWindowFocus: false },
+        },
+      },
       links: [
         loggerLink({
           enabled: (opts) =>
