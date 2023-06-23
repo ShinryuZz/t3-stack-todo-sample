@@ -18,7 +18,7 @@ const useMutateTask = () => {
     },
   });
 
-  const updateTaskMutatino = trpc.todo.updateTask.useMutation({
+  const updateTaskMutation = trpc.todo.updateTask.useMutation({
     onSuccess: (res) => {
       const previousTodos = utils.todo.getTasks.getData();
       if (previousTodos) {
@@ -43,7 +43,7 @@ const useMutateTask = () => {
     },
   });
 
-  return { createTaskMutation, updateTaskMutatino, deleteTaskMutation };
+  return { createTaskMutation, updateTaskMutation, deleteTaskMutation };
 };
 
 export default useMutateTask;
